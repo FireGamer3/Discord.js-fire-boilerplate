@@ -24,7 +24,7 @@ cmdmngr.on("message", (command) => {
   try {
     let commandFile = require(`./commands/${command.command}.js`);
     commandFile.Run(this, command);
-    logger.Info("Casino", "Command", "Command: " + command.command + " User: " + command.msg.author.username + " (" + command.msg.author.id + ")");
+    logger.Info("Boilerplate", "Command", "Command: " + command.command + " User: " + command.msg.author.username + " (" + command.msg.author.id + ")");
   } catch (err) {
   } finally {
     delete require.cache[require.resolve(`./commands/${command.command}.js`)];

@@ -40,6 +40,10 @@ class CommandManager extends EventEmitter {
         firstWord = firstWord.substr(this.prefix.length);
       }
       firstWord = firstWord.toLowerCase();
+      if (prefix.indexOf(" ") != -1) {
+        firstWord = params[0].toLowerCase()
+        params.shift()
+      }
       var command = {
         msg: msg,
         params: params,
